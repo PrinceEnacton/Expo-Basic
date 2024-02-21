@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+export const AppStyleConfig = StyleSheet.create({
   text: {
     width: 200,
     height: 180,
@@ -8,5 +8,8 @@ export default StyleSheet.create({
     borderColor: "#fff",
     borderWidth: 1,
     marginBottom: 10,
+  },
+  appbarPedding: {
+    marginTop: StatusBar.currentHeight,
   },
 });
