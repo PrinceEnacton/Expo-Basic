@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import COLORS from "../../../Asset/Theme/colors";
+import { styles } from "./styles";
 
 const Form = () => {
   const [name, setname] = useState("");
@@ -37,7 +38,7 @@ const Form = () => {
 
   const validateForm = () => {
     // console.log("Person", personList);
-    setperson([...personList, { name: name, age: age, city: city }]);
+    setperson([...personList, { name, age, city }]);
     // console.log("=>> PersonList " + [...personList["name"]]);
     // console.log(personList[0]["name"]);
   };
@@ -80,10 +81,10 @@ const Form = () => {
       </TouchableOpacity>
 
       {DATA.map((item, index) => (
-        <View>
+        <View key={index}>
           <Text style={styles.titleListTitle}>{item.title1}</Text>
           {item.data.map((item, index) => (
-            <View>
+            <View key={index}>
               <Text>{item}</Text>
             </View>
           ))}
@@ -112,7 +113,7 @@ const Form = () => {
         numColumns={1}
         // columnWrapp
 
-        erStyle
+        // erStyle
       />
 
       {/* </View> */}
@@ -135,66 +136,3 @@ const Form = () => {
 };
 
 export default Form;
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: COLORS.secondary,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 40,
-    width: 60,
-    borderRadius: 10,
-    alignSelf: "center",
-    marginTop: 10,
-  },
-  dataTable: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-  },
-  form: {
-    // flex:1,
-    padding: 30,
-    // paddingLeft:10,
-    borderWidth: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-  inputRow: {
-    backgroundColor: "yellow",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  submitButton: {
-    // flex:1,
-    backgroundColor: COLORS.secondary,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 40,
-    width: 60,
-    borderRadius: 10,
-  },
-  submitText: {
-    fontSize: 14,
-    color: "#FFFF",
-  },
-  title: {
-    // height:50,
-    fontSize: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    // alignContent:"center",
-  },
-  titleListTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  textInpute: {
-    borderWidth: 2,
-    height: 50,
-    width: 200,
-    padding: 10,
-    backgroundColor: COLORS.yellow,
-  },
-});
