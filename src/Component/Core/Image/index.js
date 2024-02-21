@@ -1,8 +1,8 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
-function ImageScreen(props) {
+function ImageScreen() {
   return (
     <View style={styles.container}>
       <Image source={require("../../../assets/favicon.png")} />
