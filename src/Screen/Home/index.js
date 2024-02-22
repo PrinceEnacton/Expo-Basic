@@ -1,14 +1,16 @@
 import React from "react";
-
-import Grid from "../../Component/Core/Grid";
-import CustomButton from "../../Component/Core/Button";
-import CustomActivityIndicator from "../../Component/Core/ActivityIndicator";
+import CustomModel from "../../Component/Core/Model";
 
 function HomeScreen(props) {
   // return <Form />;
   // return <Grid />;
   // return <CustomButton />;
-  return <CustomActivityIndicator />;
+  // return <CustomActivityIndicator />;
+  return (
+    // <View style={{ height: "100%" }}>
+    <CustomModel />
+    // </View>
+  );
 }
 export default HomeScreen;
 
