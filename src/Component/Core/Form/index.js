@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import {
   FlatList,
   SectionList,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
+  // ScrollView,
 } from "react-native";
-import COLORS from "../../../Asset/Theme/colors";
 import { styles } from "./styles";
-
+import { ScrollView } from "react-native-virtualized-view";
 const Form = () => {
   const [name, setname] = useState("");
   const [age, setage] = useState("");
@@ -42,35 +41,26 @@ const Form = () => {
     // console.log("=>> PersonList " + [...personList["name"]]);
     // console.log(personList[0]["name"]);
   };
+
+  function buildTextformField(text, setvalue) {
+    return (
+      <View style={styles.inputRow}>
+        <Text style={styles.title}>{text}</Text>
+        <TextInput
+          placeholder="Type Here ..."
+          style={styles.textInpute}
+          onChangeText={(value) => setvalue(value)}
+        />
+      </View>
+    );
+  }
   return (
     // <Text>hello</Text>
-    <View>
+    <ScrollView>
       <View style={styles.form}>
-        <View style={styles.inputRow}>
-          <Text style={styles.title}>Name</Text>
-          <TextInput
-            placeholder="Type Here ..."
-            style={styles.textInpute}
-            onChangeText={(value) => setname(value)}
-          />
-        </View>
-        <View style={styles.inputRow}>
-          <Text style={styles.title}>Age</Text>
-          <TextInput
-            placeholder="Type Here ..."
-            style={styles.textInpute}
-            onChangeText={(value) => setage(value)}
-            keyboardType="numeric"
-          />
-        </View>
-        <View style={styles.inputRow}>
-          <Text style={styles.title}>City</Text>
-          <TextInput
-            placeholder="Type Here ..."
-            style={styles.textInpute}
-            onChangeText={(value) => setcity(value)}
-          />
-        </View>
+        {buildTextformField("Name", setname)}
+        {buildTextformField("Age", setage)}
+        {buildTextformField("City", setcity)}
       </View>
 
       <TouchableOpacity
@@ -98,6 +88,8 @@ const Form = () => {
       </View>
 
       <FlatList
+        horizontal={true}
+        style={{ height: 110 }}
         data={personList}
         renderItem={({ item }) => {
           // console.log("Item", item);
@@ -110,14 +102,9 @@ const Form = () => {
           );
         }}
         keyExtractor={(index) => index.toString()}
-        numColumns={1}
-        // columnWrapp
-
-        // erStyle
+        // numColumns={1}
+        scrollEnabled
       />
-
-      {/* </View> */}
-
       <SectionList
         sections={DATA}
         renderItem={({ item }) => (
@@ -131,7 +118,7 @@ const Form = () => {
           </View>
         )}
       />
-    </View>
+    </ScrollView>
   );
 };
 
