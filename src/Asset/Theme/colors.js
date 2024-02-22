@@ -6,7 +6,7 @@
 // };
 
 export const ColorConfig = {
-  primary: "black",
+  primary: "#ffd700",
   secondary: "#6828AF",
   white: "#fff",
   yellow: "yellow",
