@@ -1,16 +1,18 @@
 import React from "react";
-import CustomModel from "../../Component/Core/Model";
+import Form from "../../Component/Core/Form";
+import { ScrollView } from "react-native-virtualized-view";
 
 function HomeScreen(props) {
-  // return <Form />;
+  return <Form />;
+
   // return <Grid />;
   // return <CustomButton />;
   // return <CustomActivityIndicator />;
-  return (
-    // <View style={{ height: "100%" }}>
-    <CustomModel />
-    // </View>
-  );
+  // return (
+  //   // <View style={{ height: "100%" }}>
+  //   <CustomModel />
+  //   // </View>
+  // );
 }
 export default HomeScreen;
 
