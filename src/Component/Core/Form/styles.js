@@ -1,5 +1,7 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { ColorConfig } from "../../../Asset/Theme/colors";
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   buttonContainer: {
@@ -20,16 +22,22 @@ export const styles = StyleSheet.create({
   },
   form: {
     // flex:1,
-    padding: 30,
     // paddingLeft:10,
     borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 15,
     // alignItems: "center",
     // justifyContent: "center",
   },
   inputRow: {
-    backgroundColor: "yellow",
+    // backgroundColor: "yellow",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 10,
+    padding: 5,
+    width: windowWidth * 0.9,
+    alignSelf: "center",
   },
   submitButton: {
     // flex:1,
@@ -47,19 +55,17 @@ export const styles = StyleSheet.create({
   title: {
     // height:50,
     fontSize: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    // alignContent:"center",
   },
   titleListTitle: {
     fontSize: 20,
     fontWeight: "bold",
+    borderWidth: 1,
   },
   textInpute: {
-    borderWidth: 2,
-    height: 50,
-    width: 200,
-    padding: 10,
+    borderWidth: 1,
+    height: (windowHeight * 0.15) / 2,
+    width: windowWidth * 0.7,
     backgroundColor: ColorConfig.yellow,
+    paddingHorizontal: 8,
   },
 });

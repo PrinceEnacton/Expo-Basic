@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-import {
-  Modal,
-  Pressable,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { AppStyleConfig } from "../../../Asset/Theme/appStyle";
+import { Modal, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { modelStyles } from "./style";
 
-const CustomModel = () => {
+const CustomModel = (children) => {
   const [visibleModel, setVisibleModel] = useState(false);
   return (
     <View>

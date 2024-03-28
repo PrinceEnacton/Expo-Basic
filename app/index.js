@@ -1,12 +1,11 @@
-import { StatusBar, View } from "react-native";
+import { ScrollView, StatusBar } from "react-native";
 import HomeScreen from "../src/Screen/Home/index";
 
 export default function App() {
   return (
-    <View>
-      {/* <Text>hello</Text> */}
+    <ScrollView>
       <StatusBar hidden={false} />
       <HomeScreen />
-    </View>
+    </ScrollView>
   );
 }

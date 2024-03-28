@@ -5,7 +5,7 @@ import { Image, StyleSheet, View } from "react-native";
 function ImageScreen() {
   return (
     <View style={styles.container}>
-      <Image source={require("../../../assets/favicon.png")} />
+      {/* <Image source={require("../../../assets/favicon.png")} /> */}
       <Image
         source={{
           uri: "https://picsum.photos/200/300",
@@ -22,7 +22,7 @@ export default ImageScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white,
     alignItems: "center",
     justifyContent: "center",
   },
